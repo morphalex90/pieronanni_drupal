@@ -39,6 +39,10 @@ class ComposerStaticInit15633e0658fb21c02a3da7ec48c70fc5
         array (
             'zaporylie\\ComposerDrupalOptimizations\\' => 38,
         ),
+        's' => 
+        array (
+            'setasign\\Fpdi\\' => 14,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -121,6 +125,7 @@ class ComposerStaticInit15633e0658fb21c02a3da7ec48c70fc5
         ),
         'M' => 
         array (
+            'Mpdf\\' => 5,
             'Masterminds\\' => 12,
         ),
         'L' => 
@@ -199,6 +204,10 @@ class ComposerStaticInit15633e0658fb21c02a3da7ec48c70fc5
         'zaporylie\\ComposerDrupalOptimizations\\' => 
         array (
             0 => __DIR__ . '/..' . '/zaporylie/composer-drupal-optimizations/src',
+        ),
+        'setasign\\Fpdi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/setasign/fpdi/src',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
@@ -401,6 +410,10 @@ class ComposerStaticInit15633e0658fb21c02a3da7ec48c70fc5
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
         ),
         'Masterminds\\' => 
         array (

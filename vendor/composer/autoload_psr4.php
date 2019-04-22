@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'zaporylie\\ComposerDrupalOptimizations\\' => array($vendorDir . '/zaporylie/composer-drupal-optimizations/src'),
+    'setasign\\Fpdi\\' => array($vendorDir . '/setasign/fpdi/src'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'lsolesen\\pel\\' => array($vendorDir . '/lsolesen/pel/src'),
     'cweagans\\Composer\\' => array($vendorDir . '/cweagans/composer-patches/src'),
@@ -57,6 +58,7 @@ return array(
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'Mpdf\\' => array($vendorDir . '/mpdf/mpdf/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
