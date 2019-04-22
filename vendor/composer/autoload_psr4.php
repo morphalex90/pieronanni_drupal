@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'zaporylie\\ComposerDrupalOptimizations\\' => array($vendorDir . '/zaporylie/composer-drupal-optimizations/src'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'lsolesen\\pel\\' => array($vendorDir . '/lsolesen/pel/src'),
     'cweagans\\Composer\\' => array($vendorDir . '/cweagans/composer-patches/src'),
     'Zumba\\Mink\\Driver\\' => array($vendorDir . '/jcalderonzumba/mink-phantomjs-driver/src'),
     'Zumba\\GastonJS\\' => array($vendorDir . '/jcalderonzumba/gastonjs/src'),
@@ -67,6 +68,7 @@ return array(
     'Grasmash\\YamlExpander\\' => array($vendorDir . '/grasmash/yaml-expander/src'),
     'Grasmash\\Expander\\' => array($vendorDir . '/grasmash/expander/src'),
     'Goutte\\' => array($vendorDir . '/fabpot/goutte/Goutte'),
+    'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
     'Drush\\Internal\\' => array($vendorDir . '/drush/drush/src/internal-forks'),
     'Drush\\' => array($vendorDir . '/drush/drush/src'),
     'Drupal\\Driver\\' => array($baseDir . '/web/drivers/lib/Drupal/Driver'),
