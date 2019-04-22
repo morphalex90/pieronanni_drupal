@@ -280,7 +280,7 @@ $config_directories = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'b33ts0OZntmcn0c4Wj4vphJw5eRPOkUrIRSNA9MpwK417_N__herDa9X9S1J8UhK7AF4alXxdw';
 
 /**
  * Deployment identifier.
@@ -769,3 +769,13 @@ $settings['entity_update_batch_size'] = 50;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $config_directories['sync'] = '../config/sync';
+$databases['default']['default'] = array (
+  'database' => 'pieronanni',
+  'username' => 'root',
+  'password' => 'root',
+  'prefix' => 'pn_',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
