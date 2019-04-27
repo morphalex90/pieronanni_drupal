@@ -398,17 +398,17 @@
     },
     {
         "name": "chi-teck/drupal-code-generator",
-        "version": "1.29.0",
-        "version_normalized": "1.29.0.0",
+        "version": "1.29.1",
+        "version_normalized": "1.29.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Chi-teck/drupal-code-generator.git",
-            "reference": "79768f0c9a50337ecce81de1fdfa48d837b9b341"
+            "reference": "f1da0370113ee246cd8f6d744d4835e8d53ea61c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Chi-teck/drupal-code-generator/zipball/79768f0c9a50337ecce81de1fdfa48d837b9b341",
-            "reference": "79768f0c9a50337ecce81de1fdfa48d837b9b341",
+            "url": "https://api.github.com/repos/Chi-teck/drupal-code-generator/zipball/f1da0370113ee246cd8f6d744d4835e8d53ea61c",
+            "reference": "f1da0370113ee246cd8f6d744d4835e8d53ea61c",
             "shasum": ""
         },
         "require": {
@@ -418,7 +418,7 @@
             "symfony/filesystem": "^2.7 || ^3.4 || ^4.0",
             "twig/twig": "^1.35"
         },
-        "time": "2019-04-13T14:36:40+00:00",
+        "time": "2019-04-26T08:30:10+00:00",
         "bin": [
             "bin/dcg"
         ],
@@ -2238,17 +2238,17 @@
     },
     {
         "name": "doctrine/persistence",
-        "version": "v1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/persistence.git",
-            "reference": "c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38"
+            "reference": "3da7c9d125591ca83944f477e65ed3d7b4617c48"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/persistence/zipball/c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38",
-            "reference": "c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38",
+            "url": "https://api.github.com/repos/doctrine/persistence/zipball/3da7c9d125591ca83944f477e65ed3d7b4617c48",
+            "reference": "3da7c9d125591ca83944f477e65ed3d7b4617c48",
             "shasum": ""
         },
         "require": {
@@ -2267,7 +2267,7 @@
             "phpstan/phpstan": "^0.8",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-11-21T00:33:13+00:00",
+        "time": "2019-04-23T08:28:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
