@@ -6,6 +6,7 @@ base theme: false
 
 name: 'Piero Nanni'
 description: 'Theme for Piero Nanni website'
+logo: 'logo.png'
 
 regions:
   navigation: 'Navigation'
@@ -19,6 +20,26 @@ regions:
   footer: 'Footer'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
+
+  box_1_1: 'Box 1x1'
+  box_1_2: 'Box 1x2'
+  box_1_3: 'Box 1x3'
+  box_1_4: 'Box 1x4'
+  
+  box_2_1: 'Box 2x1'
+  box_2_2: 'Box 2x2'
+  box_2_3: 'Box 2x3'
+  box_2_4: 'Box 2x4'
+  
+  box_3_1: 'Box 3x1'
+  box_3_2: 'Box 3x2'
+  box_3_3: 'Box 3x3'
+  box_3_4: 'Box 3x4'
+  
+  box_4_1: 'Box 4x1'
+  box_4_2: 'Box 4x2'
+  box_4_3: 'Box 4x3'
+  box_4_4: 'Box 4x4'
 
 libraries:
   - 'pieronanni/theme'
