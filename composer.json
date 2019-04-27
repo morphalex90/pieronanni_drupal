@@ -25,6 +25,7 @@
         "drupal/advagg": "^3.5",
         "drupal/block_class": "^1.0",
         "drupal/captcha": "^1.0@beta",
+        "drupal/cdn": "^3.2",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
         "drupal/eu_cookie_compliance": "^1.5",
