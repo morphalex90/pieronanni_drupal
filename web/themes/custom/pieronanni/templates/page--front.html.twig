@@ -1,0 +1,66 @@
+{% block main %}
+  <div role="main" class="main-container container-fluid js-quickedit-main-content">
+    <div class="row">
+
+      {# Content #}
+      {%
+        set content_classes = [
+          page.sidebar_first and page.sidebar_second ? 'col-md-6',
+          page.sidebar_first and page.sidebar_second is empty ? 'col-md-9',
+          page.sidebar_second and page.sidebar_first is empty ? 'col-md-9',
+          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
+        ]
+      %}
+      <section{{ content_attributes.addClass(content_classes) }}>
+
+        {# Highlighted #}
+        {% if page.highlighted %}
+          {% block highlighted %}
+            <div class="highlighted">{{ page.highlighted }}</div>
+          {% endblock %}
+        {% endif %}
+
+        {# Help #}
+        {% if page.help %}
+          {% block help %}
+            {{ page.help }}
+          {% endblock %}
+        {% endif %}
+
+        <div class="boxes">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-3 box{% if page.box_1_1 %} full{% endif %}">{{ page.box_1_1 }}</div>
+					<div class="col-3 box{% if page.box_1_2 %} full{% endif %}">{{ page.box_1_2 }}</div>
+					<div class="col-3 box{% if page.box_1_3 %} full{% endif %}">{{ page.box_1_3 }}</div>
+					<div class="col-3 box{% if page.box_1_4 %} full{% endif %}">{{ page.box_1_4 }}</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-3 box{% if page.box_2_1 %} full{% endif %}">{{ page.box_2_1 }}</div>
+					<div class="col-3 box{% if page.box_2_2 %} full{% endif %}">{{ page.box_2_2 }}</div>
+					<div class="col-3 box{% if page.box_2_3 %} full{% endif %}">{{ page.box_2_3 }}</div>
+					<div class="col-3 box{% if page.box_2_4 %} full{% endif %}">{{ page.box_2_4 }}</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-3 box{% if page.box_3_1 %} full{% endif %}">{{ page.box_3_1 }}</div>
+					<div class="col-3 box{% if page.box_3_2 %} full{% endif %}">{{ page.box_3_2 }}</div>
+					<div class="col-3 box{% if page.box_3_3 %} full{% endif %}">{{ page.box_3_3 }}</div>
+					<div class="col-3 box{% if page.box_3_4 %} full{% endif %}">{{ page.box_3_4 }}</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-3 box{% if page.box_4_1 %} full{% endif %}">{{ page.box_4_1 }}</div>
+					<div class="col-3 box{% if page.box_4_2 %} full{% endif %}">{{ page.box_4_2 }}</div>
+					<div class="col-3 box{% if page.box_4_3 %} full{% endif %}">{{ page.box_4_3 }}</div>
+					<div class="col-3 box{% if page.box_4_4 %} full{% endif %}">{{ page.box_4_4 }}</div>
+				</div>
+			</div>
+		</div>
+
+      </section>
+
+    </div>
+  </div>
+{% endblock %}
