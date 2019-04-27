@@ -100,9 +100,9 @@
       {# Header #}
       {% if page.header %}
         {% block header %}
-          <div class="col-md-12" role="heading">
+          <header class="col-md-12" role="heading">
             {{ page.header }}
-          </div>
+          </header>
         {% endblock %}
       {% endif %}
 
@@ -124,7 +124,7 @@
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
         ]
       %}
-      <section{{ content_attributes.addClass(content_classes) }}>
+      <section{{ content_attributes.addClass(content_classes).addClass('background-white') }}>
 
         {# Highlighted #}
         {% if page.highlighted %}
@@ -144,6 +144,15 @@
         {% block content %}
           <a id="main-content"></a>
           {{ page.content }}
+        {% endblock %}
+
+        {# Bootstrap Content #}
+        {% block bootstrap_content %}
+          <div class="proper-content">
+            <div class="row">
+              {{ page.bootstrap_content }}
+            </div>
+          </div>
         {% endblock %}
       </section>
 

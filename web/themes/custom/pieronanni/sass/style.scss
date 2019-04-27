@@ -1,4 +1,23 @@
+html,
+body,
+.dialog-off-canvas-main-canvas {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+}
+
+body:not(.path-frontpage) .dialog-off-canvas-main-canvas {
+    background: url(/themes/custom/pieronanni/img/sfondo.jpg) center top;
+    background-size: 1920px 1080px;
+    background-attachment: fixed;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.background-white {
+    background: rgba(255, 255, 255, 0.7);
 }

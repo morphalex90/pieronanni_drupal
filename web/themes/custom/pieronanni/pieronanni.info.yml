@@ -15,6 +15,7 @@ regions:
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
+  bootstrap_content: 'Bootstrap Content'
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
   footer: 'Footer'
