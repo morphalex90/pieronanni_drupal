@@ -1,6 +1,0 @@
-theme:
-  js:
-    js/script.js: {}
-  css:
-    theme:
-      style.css: {}
