@@ -238,4 +238,15 @@ body:not(.path-frontpage) .dialog-off-canvas-main-canvas {
   background: rgba(255, 255, 255, 0.7);
 }
 
+#block-links p {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#block-links p a {
+  color: green;
+  font-size: 50px;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=style.css.map */
