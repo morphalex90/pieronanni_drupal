@@ -3,5 +3,4 @@ theme:
     js/script.js: {}
   css:
     theme:
-      css/layout.css: {}
-      css/style.css: {}
+      style.css: {}
