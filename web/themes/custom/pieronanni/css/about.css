@@ -1,0 +1,28 @@
+#block-views-block-cv-block-1 h3 {
+    margin-top: 0;
+}
+
+/* #block-views-block-cv-block-1 hr {
+    background: #5B5EA6;
+    border: 0;
+    height: 1px;
+} */
+
+.job-element {
+    border-left: 1px solid #FFF;
+    padding-left: 10px;
+    font-size: 14px;
+}
+.job-element ul {
+    margin-top: -1em;
+}
+
+.job-element .job-wrapper {
+    display: none;
+}
+
+@media ( min-width: 575px ) { /* 575 and up */
+    #block-about hr {
+        display: none;
+    }
+}

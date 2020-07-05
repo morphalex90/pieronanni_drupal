@@ -1,0 +1,103 @@
+body {
+    background: url(/themes/custom/pieronanni/img/background.jpg) center top;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Gotham';
+    color: #FFF;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+header#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+header#navbar .container {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.adminimal-admin-toolbar header#navbar {
+    top: 39px;
+}
+
+.adminimal-admin-toolbar.toolbar-tray-open header#navbar {
+    top: 79px;
+}
+
+header#navbar .region-navigation nav ul:not(.contextual-links) {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+}
+
+header#navbar .region-navigation nav ul:not(.contextual-links) li {
+    display: table;
+    height: 100%;
+    margin-right: 15px;
+}
+
+header#navbar .region-navigation nav ul:not(.contextual-links) li a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 27px;
+}
+
+header#navbar .region-navigation nav#block-pieronanni-main-menu ul:not(.contextual-links) li a::before {
+    display: none;
+}
+
+#block-social a {
+    visibility: hidden;
+    font-size: 25px;
+    max-width: 35px;
+}
+
+#block-social ul {
+    justify-content: flex-end;
+}
+
+#block-social a:before {
+    visibility: visible;
+}
+
+@media ( max-width: 768px ) { /* 768 and down */
+    header#navbar .region-navigation nav ul:not(.contextual-links) {
+        height: auto;
+    }
+}
+
+@media ( max-width: 575px ) { /* 575 and down */
+    header#navbar .region-navigation nav#block-pieronanni-main-menu ul:not(.contextual-links) li a {
+        visibility: hidden;
+        font-size: 25px;
+        max-width: 35px;
+    }
+
+    header#navbar .region-navigation nav#block-pieronanni-main-menu ul:not(.contextual-links) li a::before {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media ( min-width: 575px ) { /* 575 and up */
+    header#navbar .region-navigation nav#block-pieronanni-main-menu ul:not(.contextual-links) li a[class^="icon-"] {
+        font-family: 'Gotham' !important;
+        font-size: 20px;
+    }
+}

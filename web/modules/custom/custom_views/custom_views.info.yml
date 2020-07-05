@@ -1,0 +1,9 @@
+name: Custom Views
+type: module
+description: Views Bootstrap v4
+package: Piero Nanni
+version: '8.x-1.0'
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:views

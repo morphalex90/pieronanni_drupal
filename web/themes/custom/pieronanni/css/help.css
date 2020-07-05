@@ -1,0 +1,25 @@
+.region-help {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.adminimal-admin-toolbar .region-help {
+    top: 39px;
+}
+
+.adminimal-admin-toolbar.toolbar-tray-open .region-help {
+    top: 79px;
+}
+
+.region-help section ul:not(.contextual-links) {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.region-help section ul:not(.contextual-links) li {
+    margin-right: 10px;
+}

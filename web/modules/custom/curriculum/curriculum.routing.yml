@@ -1,0 +1,7 @@
+curriculum.curriculum:
+  path: '/curriculum' 
+  defaults: 
+    _controller: '\Drupal\curriculum\Controller\PDF::curriculum' 
+    _title: 'Curriculum'
+  requirements: 
+    _permission: 'access content' 

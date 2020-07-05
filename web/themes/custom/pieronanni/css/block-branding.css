@@ -1,0 +1,21 @@
+.path-frontpage .site-branding {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.site-branding .site-logo {
+    padding: 8px;
+}
+
+.site-branding a {
+    color: #FFF;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.site-branding p {
+    color: #FFF;
+}

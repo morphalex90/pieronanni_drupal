@@ -1,0 +1,20 @@
+.sliding-popup-bottom {
+    width: 100%;
+    background: #5B5EA6;
+    color: #FFF;
+    padding: 15px;
+}
+
+.eu-cookie-compliance-content {
+    max-width: 100%;
+}
+
+.eu-cookie-compliance-content button {
+    border: 0;
+    border-radius: 4px;
+    padding: 4px 14px;
+}
+
+.eu-cookie-compliance-content button:hover {
+    color: #5B5EA6;
+}

@@ -1,12 +1,37 @@
 theme:
+  css:
+    theme:
+      css/fonts.css: {}
+      css/layout.css: {}
+      css/header.css: {}
+      css/help.css: {}
+      css/page-header.css: {}
+      css/region-content.css: {}
+      css/view-project.css: {}
+      css/cookie.css: {}
+      css/form.css: {}
+      css/timeline.css: {}
+      css/icomoon.css: {}
+      css/block-branding.css: {}
+      css/block-language.css: {}
+      slick/slick.css: {}
+      css/about.css: {}
+      css/popup.css: {}
+      css/footer.css: {}
   js:
+    slick/slick.min.js: {}
     js/script.js: {}
+    js/timeline.js: {}
+    js/layout.js: {}
+    js/render-blocking.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax
+
+homepage:
   css:
     theme:
-      style.css: {}
-
-
-  fonts:
-  css:
-    theme:
-      '//fonts.googleapis.com/css?family=Roboto+Mono:400,400i': { type: external }
+      css/homepage.css: {}

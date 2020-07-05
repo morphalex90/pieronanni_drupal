@@ -1,0 +1,147 @@
+html.popup-open {
+    overflow-y: hidden;
+    overflow: hidden;
+}
+
+/* .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 9997;
+} */
+
+.popup__scroller {
+    z-index: 9998;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.popup {
+    z-index: 9999;
+    position: relative;
+    margin: 10px;
+    background: #FFF;
+    padding: 20px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+}
+
+.popup.container {
+    margin: 40px auto 0 auto;
+}
+
+.popup.in {
+    opacity: 1;
+}
+
+.popup__close {
+    float: right;
+    cursor: pointer;
+}
+
+.popup__content {
+    color: #000;
+}
+
+.popup__title {
+    border-bottom: 1px solid #00F;
+    padding-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.popup__image {
+    position: relative;
+}
+
+.popup__image .slick-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: 0;
+    background: #DDD;
+    display: block;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.popup__image .slick-prev::before {
+    content: '<';
+    display: block;
+}
+
+.popup__image .slick-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: 0;
+    background: #DDD;
+    display: block;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.popup__image .slick-next::before {
+    content: '>';
+    display: block;
+}
+
+.popup__image .slick-dots {
+    padding-left: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.popup__image .slick-dots li button {
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+    text-indent: -99999px;
+    background: #CCC;
+    display: block;
+    height: 17px;
+    width: 17px;
+}
+
+.popup__image .slick-dots li button:focus {
+    outline: 0;
+}
+
+    
+.popup__image .slick-dots li button[aria-label="1 of 1"] {
+    display: none;
+}
+
+.popup__image .slick-dots li.slick-active button,
+.popup__image .slick-dots li button:hover {
+    background: #999;
+}
+
+.popup__image ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}

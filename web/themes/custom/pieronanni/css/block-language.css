@@ -1,0 +1,32 @@
+#block-languageswitcher ul.links {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+}
+
+#block-languageswitcher ul.links li {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: table;
+    height: 100%;
+}
+
+#block-languageswitcher ul.links li a {
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFF;
+}
+
+#block-languageswitcher ul.links li.is-active a {
+    font-weight: bold;
+}
+
+@media ( max-width: 575px ) { /* 575 and down */
+    #block-languageswitcher ul.links {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+}

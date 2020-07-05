@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\Core\Template\Attribute;
+
+function custom_views_preprocess_views_custom_bootstrap_grid( &$variables, $hook, $info ) {
+
+    $view = $variables['view'];
+
+    $view = $variables['view'];
+    $rows = $variables['rows'];
+    $style = $view->style_plugin;
+    $options = $style->options;
+
+    $variables['default_row_class'] = !empty($options['default_row_class']);
+    foreach ($rows as $id => $row) {
+
+        $variables['rows'][$id] = [];
+        $variables['rows'][$id]['content'] = $row;
+        $variables['rows'][$id]['attributes'] = new Attribute();
+        if ($row_class = $view->style_plugin->getRowClass($id)) {
+            $variables['rows'][$id]['attributes']->addClass($row_class);
+        }
+    }
+}

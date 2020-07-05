@@ -1,0 +1,48 @@
+.timelines {
+    margin-bottom: 30px;
+}
+
+.timeline {
+    height: 30px;
+    background: #5B5EA6;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    margin-bottom: 2px;
+    padding: 5px 30px 5px 5px;
+    border-radius: 9px;
+    color: #FFF;
+    position: relative;
+}
+
+.timeline.active {
+    border: 1px solid #450f91;
+}
+
+.timeline::before {
+    position: absolute;
+    right: 13px;
+    top: 4px;
+    height: 21px;
+    font-size: 29px;
+    content: '^';
+    transition: all 0.5s;
+    transform: rotate(180deg);
+}
+
+.timeline.active::before {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.timeline-year {
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #FFF;
+    font-size: 14px;
+}
+
+.timeline-year:first-child {
+    border-left: 1px solid #FFF;
+}
