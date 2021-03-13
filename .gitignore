@@ -45,6 +45,9 @@ web/sites/README.txt
 web/update.php
 web/web.config
 
+# Ignore .env file. See .env.example
+.env
+
 # Add directories containing build assets below.
 # Keep all additions above the "cut" line.
 
@@ -53,25 +56,8 @@ web/web.config
 # is not modified in the GitHub PR workflow.
 
 
-# :::::::::::::::::::::: cut ::::::::::::::::::::::
-
-###
-### Pantheon site .gitignore section
-###
-### Items below the "cut" line are still ignored on
-### the Pantheon site. Items above the "cut" line
-### are ignored in the GitHub repository, but committed
-### to the Pantheon repository.
-###
-
 # Ignore Drupal's file directory
 web/sites/default/files
-
-# Pantheon commits a settings.php for environment-specific settings.
-# Place local settings in settings.local.php
-web/sites/*/settings.local.php
-web/sites/*/services*.yml
-!web/sites/*/services.yml
 
 # Ignore SimpleTest multi-site environment.
 web/sites/simpletest
@@ -111,3 +97,8 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# NPM #
+##########
+tmp/*
+private/*

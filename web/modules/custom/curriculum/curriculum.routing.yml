@@ -1,7 +1,18 @@
 curriculum.curriculum:
-  path: '/curriculum' 
+  path: '/cv' 
   defaults: 
     _controller: '\Drupal\curriculum\Controller\PDF::curriculum' 
     _title: 'Curriculum'
   requirements: 
-    _permission: 'access content' 
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+curriculum.invoice:
+  path: '/admin/invoice/{nid}' 
+  defaults: 
+    _controller: '\Drupal\curriculum\Controller\Invoice::show' 
+    _title: 'Invoice'
+  requirements: 
+    _permission: 'view the administration theme'
+  options:
+    no_cache: 'TRUE'

@@ -8,11 +8,25 @@ class PDF extends ControllerBase {
 
   public function curriculum() {
 
+	\Drupal::service('page_cache_kill_switch')->trigger();
+
+	$isAnonymous = \Drupal::currentUser()->isAnonymous();
+
+	if( $isAnonymous ) {
+		$new_term = Term::create([
+			'vid' => 'clicks',
+			'name' => 'CV',
+		]);
+
+		$new_term->enforceIsNew();
+		$new_term->save();
+	}
+
 	$output = '<!DOCTYPE html>';
 	$output .= '<html>';
 	$output .= '<head>';
 	$output .= '<style>';
-	$output .= 'body {font-family: Verdana; font-size:13px;}';
+	$output .= 'body {font-family: Calibri, sans-serif; font-size:14px;}';
 	$output .= 'a {color:#337ab7; text-decoration:none;}';
 
 	$output .= '.col-8{float:left; width:66%;}';
@@ -36,13 +50,13 @@ class PDF extends ControllerBase {
 	
 	$output .= '<body>';
 	
-	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Heading
 	$output .= '<div class="col-4">';
 	$output .= '<div style="margin-left:20px; margin-right:20px; padding-top:20px;">';
-		$output .= '<div style="font-size:20px; font-weight:bold;">Piero Nanni</div>';
-		$output .= '<div>Web developer</div>';
-		$output .= '<div>This is a short description about me</div>';
+		$output .= '<div style="font-size:25px; font-weight:bold;">Piero Nanni</div>';
+		$output .= '<div style="margin-bottom:10px;">Web developer</div>';
+		$output .= '<div><em>"I don\'t know, it\'s something about web developing that calms me down, ya know?"</em></div>';
+
 	$output .= '</div>';
 	$output .= '</div>';
 
@@ -62,9 +76,6 @@ class PDF extends ControllerBase {
 
 	$output .= '<div style="height:2px; width:100%; background-color:black; margin-bottom:20px;"></div>';
 
-
-
-
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Work Experience
 	$output .= '<div class="col-8">';
 	$output .= '<div style="margin-left:20px; border-right:2px solid #000; padding-right:20px;">';
@@ -83,17 +94,17 @@ class PDF extends ControllerBase {
 				
 				$output .= '<div style="margin-top:10px;"><strong>'.$job->getName().'</strong></div>';
 				$output .= '<a href="'.$job->get('field_company')->uri.'">'.$job->get('field_company')->title.'</a><br>';
-				$output .= '<div class="col-6">'.date('m/Y', strtotime($start_date));
+				$output .= '<div class="col-6"><i>'.date('m/Y', strtotime($start_date));
 
 				if( $end_date ) {
 					$output .= ' - '.date('m/Y', strtotime($end_date));
 				} else {
 					$output .= ' - Present';
 				}
-				$output .= '</div>';
+				$output .= '</i></div>';
 
-				$output .= '<div class="col-6 text-right">'.$job->get('field_location')->value.'</div>';
-				$output .= '<div style="margin-top:5px; font-style: italic;">Accomplishments:</div>';
+				$output .= '<div class="col-6 text-right"><i>'.$job->get('field_location')->value.'</i></div>';
+				// $output .= '<div style="margin-top:5px; font-style: italic;">Accomplishments:</div>';
 				$output .= '<div>'.$job->get('field_description_cv')->value.'</div>';
 
 				////////////////////////////////////////////// Load Projects relative to the Job
@@ -111,22 +122,21 @@ class PDF extends ControllerBase {
 					$output .= '<div class="col-6"><ul class="project-list">';
 					foreach( $nodes as $node ) {
 						$technology = Term::load($node->get('field_technology')->target_id);
-						$technologyLogo = file_create_url($technology->get('field_image')->entity->getFileUri()); //base64_encode(file_get_contents(
+						$technologyLogo = file_create_url($technology->get('field_image')->entity->getFileUri());
 
 						$output .= '<li><img src="'.$technologyLogo.'" height="15" width="15"> <a href="'.$node->get('field_url')->value.'">'.$node->getTitle().'</a></li>';
 						if( $count == (int)($nodesCount/2) ) {
 							$output .= '</ul></div><div class="col-6"><ul class="project-list">';
 						}
-
 						$count++;
 					}
 					$output .= '</ul></div>';
 					$output .= '<div class="clear"></div>';
 				}
-				
-				// $output .= '<br>';
 			}
 		}
+
+		// $output .= '<div class="section"><strong>Projects</strong></div>';
 
 	$output .= '</div>';
 	$output .= '</div>';
@@ -134,42 +144,66 @@ class PDF extends ControllerBase {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Sidebar
 	$output .= '<div class="col-4">';
 	$output .= '<div style="margin-left:20px; margin-right:20px;">';
-		$output .= '<div class="section"><strong>SKILLS</strong></div>';
+
+		$output .= '<div class="section"><strong>TECHNICAL SKILLS</strong></div>';
 			$output .= '<ul>';
-			$output .= '<li>Flexibility</li>';
+
+			$output .= '<li>Languages<ul>';
+			$output .= '<li>HTML5</li>';
+			$output .= '<li>PHP</li>';
+			$output .= '<li>JavaScript</li>';
+			$output .= '<li>CSS3, Sass & BEM</li>';
+			$output .= '<li>SQL</li>';
+			$output .= '</ul></li>';
+
+			$output .= '<li>CMS<ul>';
+			$output .= '<li>WordPress</li>';
+			$output .= '<li>Drupal 6, 7, 8</li>';
+			$output .= '<li>Magento 1</li>';
+			$output .= '</ul></li>';
+			
+			$output .= '<li>Frameworks<ul>';
+			$output .= '<li>Laravel</li>';
+			$output .= '</ul></li>';
+
+			$output .= '<li>Libraries<ul>';
+			$output .= '<li>Bootstrap</li>';
+			$output .= '<li>React</li>';
+			$output .= '<li>jQuery</li>';
+			$output .= '</ul></li>';
+			
+			$output .= '<li>Gulp</li>';
+			$output .= '<li>Git</li>';
+			$output .= '<li>Linux shell</li>';
+
+			
+			// $output .= '<li>Linux terminal (Linux Command line)</li>';
+			$output .= '</ul>';
+
+		$output .= '<div class="section"><strong>PERSONAL SKILLS</strong></div>';
+			$output .= '<ul>';
+			$output .= '<li>Flexible</li>';
 			$output .= '<li>Multi tasking</li>';
 			$output .= '<li>Adaptive to change</li>';
 			$output .= '<li>Enthusiastic about web development</li>';
-			$output .= '<li>Looking to learn new skills</li>';
+			$output .= '<li>Learn new skills every day</li>';
 			$output .= '</ul>';
 
 		$output .= '<div class="section"><strong>EDUCATION</strong></div>';
 			$output .= '<ul>';
-			$output .= '<li>Web Analytics @ Mb web, Milan, Italy (2018)</li>';
-			$output .= '<li>HTML/CSS course @ CdS Bologna, Bologna, Italy (2014)</li>';
-			$output .= '<li>Computer Science course @ Aldini Valeriani Sirani, Bologna, Italy (2004 - 2010)</li>';
+			$output .= '<li>2018 - Web Analytics @ Mb web, Milan, Italy</li>';
+			$output .= '<li>2014 - HTML/CSS course @ CdS Bologna, Bologna, Italy</li>';
+			$output .= '<li>2010 - Computer Science course @ Aldini Valeriani Sirani, Bologna, Italy</li>';
 			$output .= '</ul>';
 
-		$output .= '<div class="section"><strong>STACK</strong></div>';
-			$output .= '<ul>';
-			$output .= '<li>PHP</li>';
-			$output .= '<li>JavaScript & jQuery</li>';
-			$output .= '<li>Sass & BEM</li>';
-			$output .= '<li>Gulp</li>';
-			$output .= '<li>Drupal 6, 7, 8, 9</li>';
-			$output .= '<li>WordPress</li>';
-			$output .= '<li>Magento 1</li>';
-			$output .= '<li>Git</li>';
-			$output .= '<li>Linux shell</li>';
-			// $output .= '<li>Linux terminal (Linux Command line)</li>';
-			$output .= '</ul>';
+		
 
 		$output .= '<div class="section"><strong>INTERESTS</strong></div>';
 			$output .= '<ul>';
-			$output .= '<li>Drupal</li>';
-			$output .= '<li>Cars</li>';
+			$output .= '<li>Synthwave enthusiast</li>';
 			$output .= '<li>Cyberpunk</li>';
 			$output .= '<li>Building desktop PC</li>';
+			// $output .= '<li>Movies</li>';
 			$output .= '</ul>';
 
 		$output .= '<div class="section"><strong>LANGUAGES</strong></div>';
@@ -210,21 +244,24 @@ class PDF extends ControllerBase {
 	// echo $output;
 	$mpdf = new \Mpdf\Mpdf([
 		'tempDir' => 'sites/default/files/tmp',
-		// 'pagenumPrefix' => 'Page ',
-		// 'nbpgPrefix' => ' out of ',
 		'margin_left' => 0,
 		'margin_right' => 0,
 		'margin_top' => 0,
 		'margin_bottom' => 0,
-		'default_font' => 'helvetica'
+		'default_font' => 'calibri'
 	]);
 	$mpdf->SetTitle('Curriculum Vitae Piero Nanni');
 	$mpdf->SetAuthor("Piero Nanni");
 	
-	$mpdf->WriteHTML($output); // stamp il contenuto della pagina
+	$mpdf->WriteHTML($output);
 	
-	$mpdf->Output('curriculum_piero_nanni.pdf', \Mpdf\Output\Destination::INLINE);
+	$mpdf->Output('cv_piero_nanni.pdf', \Mpdf\Output\Destination::INLINE);
 
-	exit;
+	// exit;
+
+	return [
+		'#markup' => time(),
+		'#cache' => ['max-age' => 0]
+	];
   }
 }
