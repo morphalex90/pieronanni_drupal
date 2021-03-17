@@ -158,7 +158,7 @@ class PDF extends ControllerBase {
 
 			$output .= '<li>CMS<ul>';
 			$output .= '<li>WordPress</li>';
-			$output .= '<li>Drupal 6, 7, 8</li>';
+			$output .= '<li>Drupal 6, 7, 8, 9</li>';
 			$output .= '<li>Magento 1</li>';
 			$output .= '</ul></li>';
 			
@@ -201,7 +201,7 @@ class PDF extends ControllerBase {
 		$output .= '<div class="section"><strong>INTERESTS</strong></div>';
 			$output .= '<ul>';
 			$output .= '<li>Synthwave enthusiast</li>';
-			$output .= '<li>Cyberpunk</li>';
+			// $output .= '<li>Cyberpunk</li>';
 			$output .= '<li>Building desktop PC</li>';
 			// $output .= '<li>Movies</li>';
 			$output .= '</ul>';
@@ -243,7 +243,7 @@ class PDF extends ControllerBase {
 	########## Creo il pdf
 	// echo $output;
 	$mpdf = new \Mpdf\Mpdf([
-		'tempDir' => 'sites/default/files/tmp',
+		'tempDir' => '../tmp',
 		'margin_left' => 0,
 		'margin_right' => 0,
 		'margin_top' => 0,
