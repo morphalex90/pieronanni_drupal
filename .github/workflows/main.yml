@@ -1,0 +1,7 @@
+- name: Drupal package security scanner
+  # You may pin to the exact commit or the version.
+  # uses: lpeabody/drupal-security-action@212039d675ee0b66a92bfe9ee830b2ad01ebebea
+  uses: lpeabody/drupal-security-action@1.0.0
+  with:
+    # Comma-separated list of package names and version pairings.
+    allowed: # optional, default is 
