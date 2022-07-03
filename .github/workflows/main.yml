@@ -1,3 +1,0 @@
-- name: Drupal package security scanner
-  uses: lpeabody/drupal-security-action@1.0.0
-    working-directory: ../../
