@@ -65,7 +65,7 @@
             },
             "file-mapping": {
                 "[web-root]/INSTALL.txt": false,
-                "[web-root]/README.txt": false,
+                "[web-root]/README.md": false,
                 "[web-root]/example.gitignore": false
             }
         },
